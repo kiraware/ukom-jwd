@@ -41,7 +41,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8" />
@@ -125,7 +125,7 @@
 
                     <div class="mb-6">
                         <label for="tanggal_pesan" class="block mb-2 text-sm font-medium text-zinc-950">Tanggal Pesan</label>
-                        <input type="date" id="tanggal_pesan" name="tanggal_pesan"
+                        <input type="date" id="tanggal_pesan" name="tanggal_pesan" min="<?php echo date("Y-m-d") ?>"
                             class="bg-zinc-200 border border-zinc-300 text-zinc-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             required />
                     </div>

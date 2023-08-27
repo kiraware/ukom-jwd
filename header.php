@@ -9,6 +9,8 @@
                     href="pesan.php">Pesan</a></li>
             <li><a class="text-lg sm:text-2xl font-semibold text-slate-700 hover:text-slate-700/50"
                     href="daftar-harga.php">Daftar Harga</a></li>
+            <li><a class="text-lg sm:text-2xl font-semibold text-slate-700 hover:text-slate-700/50"
+                    href="daftar-pesanan.php">Daftar Pesanan</a></li>
         </ul>
     </nav>
 </header>
