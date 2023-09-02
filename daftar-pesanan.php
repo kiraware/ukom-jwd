@@ -35,6 +35,9 @@
                             Nomor Identitas
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Email Pemesan 
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Tipe Kamar
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -53,7 +56,7 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT id_pemesanan, nama_pemesan, jenis_kelamin, nomor_identitas, id_produk, tanggal_pesan, durasi_menginap, termasuk_breakfast, total_bayar FROM `pemesanan`";
+                        $sql = "SELECT id_pemesanan, email_pemesan, nama_pemesan, jenis_kelamin, nomor_identitas, id_produk, tanggal_pesan, durasi_menginap, termasuk_breakfast, total_bayar FROM `pemesanan`";
                         $result = mysqli_query($con, $sql);
                         
                         $sql2 = "SELECT id_produk, nama_produk FROM `produk`";
@@ -71,6 +74,7 @@
                         if ($result) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 $id_pemesanan = $row['id_pemesanan'];
+                                $email_pemesan = $row['email_pemesan'];
                                 $nama_pemesan = $row['nama_pemesan'];
                                 $jenis_kelamin = $row['jenis_kelamin'];
                                 $nomor_identitas = $row['nomor_identitas'];
@@ -85,6 +89,7 @@
                                 echo "<td class=\"px-6 py-4\">$nama_pemesan</td>";
                                 echo "<td class=\"px-6 py-4\">$jenis_kelamin</td>";
                                 echo "<td class=\"px-6 py-4\">$nomor_identitas</td>";
+                                echo "<td class=\"px-6 py-4\">$email_pemesan</td>";
                                 echo "<td class=\"px-6 py-4\">$nama_kamar[$id_produk]</td>";
                                 echo "<td class=\"px-6 py-4\">$tanggal_pesan</td>";
                                 echo "<td class=\"px-6 py-4\">$durasi_menginap</td>";

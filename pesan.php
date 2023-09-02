@@ -3,6 +3,7 @@
 
     if (isset($_POST['submit'])) {
         $nama_pemesan = $_POST['nama_pemesan'];
+        $email_pemesan = $_POST['email_pemesan'];
         $jenis_kelamin = $_POST['jenis_kelamin'];
         $nomor_identitas = $_POST['nomor_identitas'];
         $id_produk = $_POST['id_produk'];
@@ -27,7 +28,7 @@
             $total_bayar = $total_bayar + 80000;
         }
 
-        $sql = "INSERT INTO `pemesanan` (nama_pemesan,jenis_kelamin,nomor_identitas,id_produk,tanggal_pesan,durasi_menginap,termasuk_breakfast,total_bayar) VALUES('$nama_pemesan', '$jenis_kelamin', '$nomor_identitas', '$id_produk', '$tanggal_pesan', '$durasi_menginap', '$termasuk_breakfast', '$total_bayar')";
+        $sql = "INSERT INTO `pemesanan` (nama_pemesan,email_pemesan,jenis_kelamin,nomor_identitas,id_produk,tanggal_pesan,durasi_menginap,termasuk_breakfast,total_bayar) VALUES('$nama_pemesan','$email_pemesan', '$jenis_kelamin', '$nomor_identitas', '$id_produk', '$tanggal_pesan', '$durasi_menginap', '$termasuk_breakfast', '$total_bayar')";
         $result = mysqli_query($con, $sql);
 
         if ($result) {
@@ -92,6 +93,13 @@
                         <input type="text" id="nomor_identitas" name="nomor_identitas"
                             class="bg-zinc-50 border border-zinc-300 text-zinc-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="16 digit" required minlength="16" maxlength="16" />
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="email_pemesan" class="block mb-2 text-sm font-medium text-zinc-950">Email Pemesan</label>
+                        <input type="email" id="email_pemesan" name="email_pemesan"
+                            class="bg-zinc-50 border border-zinc-300 text-zinc-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            placeholder="email@email.com" required />
                     </div>
 
                     <div class="mb-6">
