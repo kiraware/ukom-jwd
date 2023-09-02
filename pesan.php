@@ -91,7 +91,7 @@
                             Identitas</label>
                         <input type="text" id="nomor_identitas" name="nomor_identitas"
                             class="bg-zinc-50 border border-zinc-300 text-zinc-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                            placeholder="16 digit" required onchange="check16Digit(this)" />
+                            placeholder="16 digit" required minlength="16" maxlength="16" />
                     </div>
 
                     <div class="mb-6">
